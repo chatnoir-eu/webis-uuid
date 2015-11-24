@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="var" path="USER_HOME/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.10/4b95f4897fa13f2cd904aee711aeafc0c5295cd8/commons-codec-1.10.jar" sourcepath="/USER_HOME/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.10/11fb3d88ae7e3b757d70237064210ceb954a5a04/commons-codec-1.10-sources.jar"/>
+	<classpathentry kind="output" path="build/classes/main"/>
+</classpath>
