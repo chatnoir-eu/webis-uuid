@@ -9,5 +9,5 @@ repositories {
 }
 
 dependencies {
-    compile 'commons-codec:commons-codec:1.10'
+    compile files("../../thirdparty/thirdparty-apache-commons-codec-1.8/commons-codec-1.8.jar")
 }
