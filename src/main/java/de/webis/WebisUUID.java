@@ -15,8 +15,9 @@
  * permissions and limitations under the License.
  */
 
-import org.apache.commons.codec.binary.Hex;
+package de.webis;
 
+import org.apache.commons.codec.binary.Hex;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
