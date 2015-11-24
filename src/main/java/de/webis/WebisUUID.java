@@ -111,7 +111,7 @@ public class WebisUUID
      *
      * @param args command line arguments.
      */
-    public static void main(String[] args)
+    public static void main(final String[] args)
     {
         if (2 != args.length) {
             System.err.println("ERROR: Missing arguments!");
