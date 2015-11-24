@@ -107,7 +107,7 @@ public class WebisUUID
     }
 
     /**
-     * Command line interface to generate UUIDs.
+     * Command line interface for generating UUIDs.
      *
      * @param args command line arguments.
      */
