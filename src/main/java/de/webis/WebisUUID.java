@@ -105,4 +105,20 @@ public class WebisUUID
             return null;
         }
     }
+
+    /**
+     * Command line interface to generate UUIDs.
+     *
+     * @param args command line arguments.
+     */
+    public static void main(String[] args)
+    {
+        if (2 != args.length) {
+            System.err.println("ERROR: Missing arguments!");
+            System.err.println("Usage: webis-uuid.jar PREFIX INTERNAL_ID");
+            System.exit(1);
+        }
+
+        System.out.println(generateUUID(args[0], args[1]));
+    }
 }
