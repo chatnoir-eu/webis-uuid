@@ -20,6 +20,7 @@ package de.webis;
 import org.apache.commons.codec.binary.Hex;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.UUID;
 
 /**
  * Generator for version 5 (name-based SHA1) UUIDs to identify records in generated web corpus MapFiles.
@@ -59,7 +60,7 @@ public class WebisUUID
      * @param internalId internal ID (scheme-specific part)
      * @return generated version 5 UUID
      */
-    public String generateUUID(final String internalId)
+    public UUID generateUUID(final String internalId)
     {
         return generateUUID(mPrefix, internalId);
     }
@@ -72,7 +73,7 @@ public class WebisUUID
      * @param internalId internal ID (scheme-specific part)
      * @return generated version 5 UUID
      */
-    public static String generateUUID(final String prefix, final String internalId)
+    public static UUID generateUUID(final String prefix, final String internalId)
     {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA1");
@@ -100,7 +101,7 @@ public class WebisUUID
                 strBuilder.append(encodedHex.charAt(i));
             }
 
-            return strBuilder.toString();
+            return UUID.fromString(strBuilder.toString());
         } catch (NoSuchAlgorithmException ignored) {
             return null;
         }
@@ -119,6 +120,11 @@ public class WebisUUID
             System.exit(1);
         }
 
-        System.out.println(generateUUID(args[0], args[1]));
+        final UUID uuid = generateUUID(args[0], args[1]);
+        if (null == uuid) {
+            System.err.println("Error generating UUID");
+            System.exit(1);
+        }
+        System.out.println(uuid.toString());
     }
 }
