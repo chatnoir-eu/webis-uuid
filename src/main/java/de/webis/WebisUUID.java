@@ -17,6 +17,7 @@
 
 package de.webis;
 
+import com.sun.istack.internal.NotNull;
 import org.apache.commons.codec.binary.Hex;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -60,6 +61,7 @@ public class WebisUUID
      * @param internalId internal ID (scheme-specific part)
      * @return generated version 5 UUID
      */
+    @NotNull
     public UUID generateUUID(final String internalId)
     {
         return generateUUID(mPrefix, internalId);
@@ -73,6 +75,7 @@ public class WebisUUID
      * @param internalId internal ID (scheme-specific part)
      * @return generated version 5 UUID
      */
+    @NotNull
     public static UUID generateUUID(final String prefix, final String internalId)
     {
         try {
@@ -103,7 +106,8 @@ public class WebisUUID
 
             return UUID.fromString(strBuilder.toString());
         } catch (NoSuchAlgorithmException ignored) {
-            return null;
+            // should never happen
+            return UUID.fromString("00000000-0000-0000-0000-000000000000");
         }
     }
 
@@ -120,11 +124,6 @@ public class WebisUUID
             System.exit(1);
         }
 
-        final UUID uuid = generateUUID(args[0], args[1]);
-        if (null == uuid) {
-            System.err.println("Error generating UUID");
-            System.exit(1);
-        }
-        System.out.println(uuid.toString());
+        System.out.println(generateUUID(args[0], args[1]).toString());
     }
 }
