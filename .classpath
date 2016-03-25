@@ -2,9 +2,6 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src/main/java"/>
-	<classpathentry kind="src" path="src/test/java"/>
-	<classpathentry kind="src" path="src/main/resources"/>
-	<classpathentry kind="src" path="src/test/resources"/>
-	<classpathentry kind="lib" path="/home/roce3528/code-in-progress/thirdparty/thirdparty-apache-commons-codec-1.8/commons-codec-1.8.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/thirdparty-apache-commons-codec-1.8"/>
 	<classpathentry kind="output" path="build/classes/main"/>
 </classpath>
