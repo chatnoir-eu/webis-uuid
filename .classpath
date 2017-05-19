@@ -3,5 +3,5 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/thirdparty-apache-commons-codec-1.8"/>
-	<classpathentry kind="output" path="build/classes/main"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>
