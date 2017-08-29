@@ -18,7 +18,7 @@ dependencies {
     compile group: 'commons-codec', name: 'commons-codec', version: '1.9'
 }
 
-jar{
+jar {
     archiveName 'webis-uuid.jar'
 }
 
