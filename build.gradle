@@ -1,4 +1,4 @@
-group 'de.webis.chatnoir2'
+group 'de.webis'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
