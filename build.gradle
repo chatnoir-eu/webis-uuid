@@ -1,10 +1,13 @@
-version '1.0'
+group 'de.webis.chatnoir2'
+version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
 
 allprojects {
-    sourceCompatibility = 1.7
-    targetCompatibility = 1.7
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 }
 
 repositories {
@@ -12,5 +15,18 @@ repositories {
 }
 
 dependencies {
-    compile files("../../thirdparty/thirdparty-apache-commons-codec-1.8/commons-codec-1.8.jar")
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.9'
 }
+
+jar{
+    archiveName 'webis-uuid.jar'
+}
+
+task copyJar {
+    copy {
+        from 'build/libs/webis-uuid.jar'
+        into "jar"
+    }
+}
+
+build.dependsOn copyJar

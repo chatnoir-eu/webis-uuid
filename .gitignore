@@ -1,6 +1,10 @@
 bin
 .gradle
 .idea
+*.iml
 build
+out
 classes
 *.class
+.classpath
+.project

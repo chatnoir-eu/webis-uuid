@@ -1,6 +1,6 @@
 /*
  * Webis UUID generator.
- * Copyright (C) 2015 Janek Bevendorff <janek.bevendorff@uni-weimar.de>
+ * Copyright (C) 2015-2017 Janek Bevendorff <janek.bevendorff@uni-weimar.de>
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you
  * may not use this file except in compliance with the License. You may
@@ -17,7 +17,6 @@
 
 package de.webis;
 
-import com.sun.istack.internal.NotNull;
 import org.apache.commons.codec.binary.Hex;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -61,7 +60,6 @@ public class WebisUUID
      * @param internalId internal ID (scheme-specific part)
      * @return generated version 5 UUID
      */
-    @NotNull
     public UUID generateUUID(final String internalId)
     {
         return generateUUID(mPrefix, internalId);
@@ -75,7 +73,6 @@ public class WebisUUID
      * @param internalId internal ID (scheme-specific part)
      * @return generated version 5 UUID
      */
-    @NotNull
     public static UUID generateUUID(final String prefix, final String internalId)
     {
         try {
