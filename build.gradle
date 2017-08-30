@@ -20,6 +20,12 @@ dependencies {
 
 jar {
     archiveName 'webis-uuid.jar'
+    manifest {
+        attributes 'Main-Class': 'de.webis.WebisUUID'
+    }
+    configurations.compile.findAll { it.name.contains('commons-codec') }.each {
+        from(it.isDirectory() ? it : zipTree(it))
+    }
 }
 
 task copyJar {
