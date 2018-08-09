@@ -1,38 +1,50 @@
-group 'de.webis'
-version '1.0-SNAPSHOT'
-
+// Apply plugins
 apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
+apply plugin: 'application'
 
+// Basic configuration and settings for all (sub-)projects
 allprojects {
+    group = 'de.webis.corpora'
+    version = '1.0'
+    mainClassName = 'de.webis.WebisUUID'
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
-}
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    compile group: 'commons-codec', name: 'commons-codec', version: '1.9'
-}
-
-jar {
-    archiveName 'webis-uuid.jar'
-    manifest {
-        attributes 'Main-Class': 'de.webis.WebisUUID'
+    // Declare global dependencies
+    dependencies {
+        implementation group: 'commons-codec', name: 'commons-codec', version: '1.9'
     }
-    configurations.compile.findAll { it.name.contains('commons-codec') }.each {
-        from(it.isDirectory() ? it : zipTree(it))
+
+    // Set MANIFEST.MF contents
+    jar {
+        manifest {
+            attributes('Main-Class': mainClassName)
+        }
     }
 }
 
-task copyJar {
-    copy {
-        from 'build/libs/webis-uuid.jar'
-        into "jar"
+// Set POM definition
+ext.pomDef = {
+    name = 'webis-uuid'
+    description = 'Webis Corpus Data UUID Generation Tool'
+    url = 'https://webis.de'
+     licenses {
+         license {
+             name = 'MIT License'
+             url = 'http://www.opensource.org/licenses/mit-license.php'
+         }
+     }
+     developers {
+         developer {
+             name = 'Janek Bevendorff'
+             email = 'janek.bevendorff@uni-weimar.de'
+         }
+     }
+    organization {
+        name = 'Webis'
+        url = 'https://webis.de'
     }
 }
 
-build.dependsOn copyJar
+// Include Artifactory configuration
+apply from: 'artifactory.gradle'

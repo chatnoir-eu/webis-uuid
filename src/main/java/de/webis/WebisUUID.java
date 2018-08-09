@@ -36,7 +36,7 @@ import java.util.UUID;
  * The name part consists of a given scheme prefix (e.g. clueweb09) followed by a colon and the internal
  * (globally non-unique) record ID (e.g. clueweb09-en0001-02-21241).
  *
- * @author Janek Bevendorff <janek.bevendorff@uni-weimar.de>
+ * @author Janek Bevendorff &lt;janek.bevendorff@uni-weimar.de&gt;
  */
 public class WebisUUID
 {

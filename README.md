@@ -6,7 +6,6 @@ generated web corpus MapFiles.
 ## Building the Source Code
 Run
 ```
-gradle build
+./gradlew build
 ```
-inside the source directory. The generated JAR file will be in
-`jar/webis-uuid.jar`.
+inside the source directory.
